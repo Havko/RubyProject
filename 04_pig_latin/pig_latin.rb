@@ -1,11 +1,6 @@
 def translate(str)
-puts str.first
-vowels = ['a', 'e', 'i', 'o', 'u']
-puts str[0]
-if str[0] == 'a'
-str.push('ay')
-puts str
-else
+if ['a', 'e', 'i', 'o', 'u'].any? {|letter| letter == str[0, 1]}
+	str + 'ay'
 end
 end
-translate("apple")
+puts translate("apple")
