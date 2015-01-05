@@ -1,6 +1,4 @@
-def translate(str)
-if ['a', 'e', 'i', 'o', 'u'].any? {|letter| letter == str[0, 1]}
-	str + 'ay'
+def translate(word)
+  prefix = word[0, %w(a e i o u).map{|vowel| "#{word}aeiou".index(vowel)}.min]
+  "#{word[prefix.length..-1]}#{prefix}ay"
 end
-end
-puts translate("apple")
